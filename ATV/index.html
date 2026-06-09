@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Profissional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <script>
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+            document.documentElement.setAttribute('data-bs-theme', storedTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-bs-theme', 'dark');
+        }
+    </script>
+</head>
+
+<body class="bg-body-tertiary d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">My Curriculum</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav" id="portfolioTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active btn-link border-0 bg-transparent" id="home-tab"
+                                data-bs-toggle="tab" data-bs-target="#secao-home" type="button" role="tab"
+                                aria-controls="secao-home" aria-selected="true">Home (Currículo)</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link btn-link border-0 bg-transparent" id="portfolio-tab"
+                                data-bs-toggle="tab" data-bs-target="#secao-portfolio" type="button" role="tab"
+                                aria-controls="secao-portfolio" aria-selected="false">Portfólio</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link btn-link border-0 bg-transparent" id="contato-tab"
+                                data-bs-toggle="tab" data-bs-target="#secao-contato" type="button" role="tab"
+                                aria-controls="secao-contato" aria-selected="false">Contato Comercial</button>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-outline-light rounded-circle p-2 lh-1" id="btnTema" type="button" aria-label="Alternar tema">
+                            <i class="bi bi-moon-stars-fill" id="iconeTema"></i>
+                        </button>
+
+                        <div class="dropdown">
+                            <button class="btn btn-dark dropdown-toggle position-relative" type="button"
+                                id="dropdownNotificacoes" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-bell-fill"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    3
+                                    <span class="visually-hidden">mensagens não lidas</span>
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownNotificacoes">
+                                <li>
+                                    <h6 class="dropdown-header">Notificações</h6>
+                                </li>
+                                <li><a class="dropdown-item" href="#">Mensagem 1: Feedback do projeto enviado</a></li>
+                                <li><a class="dropdown-item" href="#">Mensagem 2: Nova oportunidade de vaga</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-primary" href="#">Ver todas as mensagens</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 flex-grow-1">
+        <section class="tab-content" id="portfolioTabsContent">
+
+            <div class="tab-pane fade show active" id="secao-home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row g-4">
+                    
+                    <aside class="col-12 col-md-4 col-lg-3">
+                        <div class="card shadow-sm text-center">
+                            <div class="pt-4 px-4">
+                                <img src="vivi.png" class="card-img-top rounded-circle img-thumbnail mx-auto"
+                                    alt="Foto de Perfil" style="width: 150px; height: 150px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold fs-4">Vicente Costa</h5>
+                                <p class="text-body-secondary fs-6 mb-3">Desenvolvedor em Aprendizagem</p>
+                                <hr>
+                                <p class="card-text text-start fs-6 text-body-secondary">
+                                    <strong>Sobre mim:</strong> Aprendo sobre códigos e tentando me integrar no mercado de trabalho.
+                                </p>
+                                <a href="https://github.com/vnzn7" target="_blank" class="btn btn-dark btn-sm w-100 mt-3">
+                                    <i class="bi bi-github me-2"></i>Visite meu GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="col-12 col-md-8 col-lg-9">
+                        
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <h3 class="card-title fw-bold mb-3 fs-3">
+                                    <i class="bi bi-briefcase-fill text-primary me-2"></i>Experiência Profissional
+                                </h3>
+                                
+                                <div class="accordion" id="accordionExperiencia">
+                                    <div class="accordion-item border-0">
+                                        <h5 class="accordion-header" id="headingExperienciaBtn">
+                                            <button class="accordion-button collapsed bg-body-secondary text-primary fw-medium rounded fs-6 p-2 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExperienciaConteudo" aria-expanded="false" aria-controls="collapseExperienciaConteudo">
+                                                <small>Clique para ver detalhes</small>
+                                            </button>
+                                        </h5>
+                                        
+                                        <div id="collapseExperienciaConteudo" class="accordion-collapse collapse" aria-labelledby="headingExperienciaBtn" data-bs-parent="#accordionExperiencia">
+                                            <div class="accordion-body ps-1 pt-3 pb-0 text-body-secondary">
+                                                <div class="mb-4">
+                                                    <h5 class="fw-semibold mb-1 text-body">Desenvolvedor em Aprendizagem (Fullstack) — Senai</h5>
+                                                    <span class="text-body-secondary d-block mb-2 fs-6">Período: 2025 - 2026</span>
+                                                    <p class="mb-0">Estudo fullstack com foco no front, otimização de performance de páginas web e liderança técnica de equipe.</p>
+                                                </div>
+                                                <hr>
+                                                <div class="mt-3">
+                                                    <h5 class="fw-semibold mb-1 text-body">Monitor de Crianças — Katavento e Megabrinquedos</h5>
+                                                    <span class="text-body-secondary d-block mb-2 fs-6">Período: 2025 - 2026</span>
+                                                    <p class="mb-0">Lido com crianças e promovendo seu desenvolvimento e o melhor ambiente possível em uma festa de aniversário.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <h3 class="card-title fw-bold mb-3 fs-3">
+                                    <i class="bi bi-mortarboard-fill text-primary me-2"></i>Formação Acadêmica
+                                </h3>
+                                
+                                <div class="accordion" id="accordionFormacao">
+                                    <div class="accordion-item border-0">
+                                        <h5 class="accordion-header" id="headingFormacaoBtn">
+                                            <button class="accordion-button collapsed bg-body-secondary text-primary fw-medium rounded fs-6 p-2 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFormacaoConteudo" aria-expanded="false" aria-controls="collapseFormacaoConteudo">
+                                                <small>Clique para ver detalhes</small>
+                                            </button>
+                                        </h5>
+                                        
+                                        <div id="collapseFormacaoConteudo" class="accordion-collapse collapse" aria-labelledby="headingFormacaoBtn" data-bs-parent="#accordionFormacao">
+                                            <div class="accordion-body ps-1 pt-3 pb-0">
+                                                <h5 class="fw-semibold mb-1">Técnico em Análise e Desenvolvimento de Sistemas</h5>
+                                                <span class="text-body-secondary d-block fs-6">Senai-791 | 2025 - 2026</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-body p-4">
+                                <h3 class="card-title fw-bold mb-3 fs-3">
+                                    <i class="bi bi-gear-fill text-primary me-2"></i>Habilidades
+                                </h3>
+                                
+                                <div class="accordion" id="accordionHabilidades">
+                                    <div class="accordion-item border-0">
+                                        <h5 class="accordion-header" id="headingHabilidadesBtn">
+                                            <button class="accordion-button collapsed bg-body-secondary text-primary fw-medium rounded fs-6 p-2 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHabilidadesConteudo" aria-expanded="false" aria-controls="collapseHabilidadesConteudo">
+                                                <small>Clique para ver detalhes</small>
+                                            </button>
+                                        </h5>
+                                        
+                                        <div id="collapseHabilidadesConteudo" class="accordion-collapse collapse" aria-labelledby="headingHabilidadesBtn" data-bs-parent="#accordionHabilidades">
+                                            <div class="accordion-body ps-1 pt-3 pb-0">
+                                                
+                                                <div class="row g-4">
+                                                    <div class="col-12 col-md-6">
+                                                        <h5 class="fw-semibold mb-3 text-body"><i class="bi bi-code-slash text-primary me-2"></i>Hard Skills</h5>
+                                                        <ul class="list-group list-group-flush small">
+                                                            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 text-body">Front-End (HTML, CSS, React, Bootstrap) <span class="badge bg-primary rounded-pill">Avançado/Intermediário</span></li>
+                                                            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 text-body">Node.js <span class="badge bg-primary rounded-pill">Intermediário</span></li>
+                                                            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 text-body">Python <span class="badge bg-primary rounded-pill">Intermediário</span></li>
+                                                            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 text-body">Figma <span class="badge bg-primary rounded-pill">Avançado</span></li>
+                                                            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 text-body">Git e GitHub <span class="badge bg-primary rounded-pill">Intermediário</span></li>
+                                                            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 text-body">SQL <span class="badge bg-primary rounded-pill">Intermediário</span></li>
+                                                            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 text-body">JavaScript <span class="badge bg-primary rounded-pill">Básico</span></li>
+                                                            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 text-body">Java <span class="badge bg-primary rounded-pill">Básico</span></li>
+                                                        </ul>
+                                                    </div>
+                                                    
+                                                    <div class="col-12 col-md-6">
+                                                        <h5 class="fw-semibold mb-3 text-body"><i class="bi bi-people-fill text-primary me-2"></i>Soft Skills</h5>
+                                                        <ul class="list-group list-group-flush small">
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Escuta Ativa</li>
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Trabalho em Equipe e Colaboração</li>
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Resolução Complexa de Problemas</li>
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Comunicação Clara</li>
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Adaptabilidade e Flexibilidade</li>
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Gerenciamento de Tempo</li>
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Empatia e Inteligência Emocional</li>
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Proatividade e Iniciativa</li>
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Pensamento Crítico</li>
+                                                            <li class="list-group-item bg-transparent text-body px-0"><i class="bi bi-check2-circle text-success me-2"></i>Liderança</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> </div> </div>
+
+            <div class="tab-pane fade" id="secao-portfolio" role="tabpanel" aria-labelledby="portfolio-tab">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="card-title fw-bold mb-4 fs-3"><i class="bi bi-folder-fill text-primary me-2"></i>Projetos Realizados</h3>
+
+                        <div id="carouselProjetos" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                            <div class="carousel-inner rounded">
+                                <div class="carousel-item active" style="cursor: pointer;">
+                                    <img src="p1.png" class="d-block w-100" alt="Projeto 1" style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded px-3 text-white">
+                                        <h5>Projeto 1</h5>
+                                        <p>Clique para ver detalhes do projeto.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" style="cursor: pointer;">
+                                    <img src="p2.png" class="d-block w-100" alt="Projeto 2" style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded px-3 text-white">
+                                        <h5>Projeto 2</h5>
+                                        <p>Clique para ver detalhes do projeto.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjetos" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselProjetos" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Próximo</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="secao-contato" role="tabpanel" aria-labelledby="contato-tab">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="card-title fw-bold mb-2 fs-3"><i class="bi bi-envelope-paper-fill text-primary me-2"></i>Contato Comercial</h3>
+                            <p class="text-muted small mb-4">Se você representa uma empresa, recrutadora ou possui uma proposta de projeto/freelance, envie os dados abaixo para iniciarmos uma conversa.</p>
+
+                            <form action="#" method="POST">
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-6">
+                                        <label for="nomeEmpresa" class="form-label fw-semibold text-secondary small">Seu Nome / Empresa</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-white text-muted"><i class="bi bi-building"></i></span>
+                                            <input type="text" class="form-control" id="nomeEmpresa" placeholder="Ex: Nome da Empresa ou Recrutador" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <label for="emailCorporativo" class="form-label fw-semibold text-secondary small">E-mail de Contato</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text bg-white text-muted"><i class="bi bi-envelope"></i></span>
+                                            <input type="email" class="form-control" id="emailCorporativo" placeholder="seuemail@empresa.com" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="assuntoContato" class="form-label fw-semibold text-secondary small">Objetivo do Contato</label>
+                                        <select class="form-select" id="assuntoContato" required>
+                                            <option value="" selected disabled>Selecione uma opção...</option>
+                                            <option value="vaga">Oportunidade de Emprego (CLT/PJ)</option>
+                                            <option value="freelance">Desenvolvimento de Projeto / Freelance</option>
+                                            <option value="estagio">Proposta de Estágio / Aprendizagem</option>
+                                            <option value="outro">Outros Assuntos Comerciais</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="avaliacaoPortfolio" class="form-label fw-semibold text-secondary small d-flex justify-content-between">
+                                            <span>Avalie este Portfólio (0 a 10)</span>
+                                            <span id="valorAvaliacao" class="badge bg-primary fs-6">5</span>
+                                        </label>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="text-muted small">0</span>
+                                            <input type="range" class="form-range" id="avaliacaoPortfolio" min="0" max="10" step="1" value="5">
+                                            <span class="text-muted small">10</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label fw-semibold text-secondary small d-block">Quão fácil foi navegar por este portfólio? (1 - Muito Difícil a 5 - Muito Fácil)</label>
+                                        <div class="d-flex gap-3 flex-wrap">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="facilidadeNavegacao" id="nav1" value="1">
+                                                <label class="form-check-label small text-muted" for="nav1">1</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="facilidadeNavegacao" id="nav2" value="2">
+                                                <label class="form-check-label small text-muted" for="nav2">2</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="facilidadeNavegacao" id="nav3" value="3" checked>
+                                                <label class="form-check-label small text-muted" for="nav3">3</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="facilidadeNavegacao" id="nav4" value="4">
+                                                <label class="form-check-label small text-muted" for="nav4">4</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="facilidadeNavegacao" id="nav5" value="5">
+                                                <label class="form-check-label small text-muted" for="nav5">5</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-sm-6">
+                                        <label for="recomendacao" class="form-label fw-semibold text-secondary small">Você recomendaria meu trabalho ou perfil para outras conexões?</label>
+                                        <select class="form-select" id="recomendacao">
+                                            <option value="com_certeza" selected>Com certeza!</option>
+                                            <option value="provavelmente">Provavelmente sim</option>
+                                            <option value="talvez">Talvez / Preciso conhecer mais projetos</option>
+                                            <option value="nao">No momento não</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 col-sm-6">
+                                        <label class="form-label fw-semibold text-secondary small d-block">O que mais chamou sua atenção no perfil?</label>
+                                        <div class="row g-2">
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="attrLayout" value="layout" checked>
+                                                    <label class="form-check-label small text-muted" for="attrLayout">Design / Layout</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="attrSkills" value="skills">
+                                                    <label class="form-check-label small text-muted" for="attrSkills">Habilidades técnicas</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="attrProjetos" value="projetos">
+                                                    <label class="form-check-label small text-muted" for="attrProjetos">Quantidade de Projetos</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="attrOrganizacao" value="organizacao">
+                                                    <label class="form-check-label small text-muted" for="attrOrganizacao">Organização / Clareza</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="mensagemContato" class="form-label fw-semibold text-secondary small">Mensagem / Detalhes da Proposta</label>
+                                        <textarea class="form-control" id="mensagemContato" rows="4" placeholder="Descreva brevemente a oportunidade, tecnologias requisitadas ou escopo do projeto..." required></textarea>
+                                    </div>
+                                    <div class="col-12 text-end mt-4">
+                                        <button type="button" class="btn btn-primary px-4 fw-bold" onclick="window.location.href='mailto:vicentee.andrade.costa@gmail.com?subject=Contato%20Portfólio'">
+                                            <i class="bi bi-send-fill me-2"></i>Enviar Mensagem
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+
+    <footer id="contato-info" class="bg-dark text-white pt-5 pb-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-md-6 text-center text-md-start">
+                    <h4 class="fw-bold mb-3">Informações para Contato</h4>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
+                        <i class="bi bi-envelope-fill text-primary me-2 fs-5"></i>
+                        <span>vicentee.andrade.costa@gmail.com</span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
+                        <i class="bi bi-telephone-fill text-primary me-2 fs-5"></i>
+                        <span>(14) 99627-0847</span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                        <i class="bi bi-geo-alt-fill text-primary me-2 fs-5"></i>
+                        <span>Botucatu, São Paulo, Brasil</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-muted small">
+                &copy; 2026 Vicente Costa. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const btnTema = document.getElementById('btnTema');
+        const iconeTema = document.getElementById('iconeTema');
+
+        // Função para atualizar o ícone do botão dependendo do tema atual
+        function atualizarIcone(tema) {
+            if (tema === 'dark') {
+                iconeTema.className = 'bi bi-sun-fill';
+            } else {
+                iconeTema.className = 'bi bi-moon-stars-fill';
+            }
+        }
+
+        // Inicializa o ícone correto baseado no tema ativo ao carregar a página
+        atualizarIcone(document.documentElement.getAttribute('data-bs-theme'));
+
+        // Evento de clique para mudar o tema
+        btnTema.addEventListener('click', () => {
+            const temaAtual = document.documentElement.getAttribute('data-bs-theme');
+            const novoTema = temaAtual === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-bs-theme', novoTema);
+            localStorage.setItem('theme', novoTema);
+            atualizarIcone(novoTema);
+        });
+
+        // Script complementar para atualizar o valor do input range em tempo real
+        const rangeInput = document.getElementById('avaliacaoPortfolio');
+        const valorBadge = document.getElementById('valorAvaliacao');
+        if(rangeInput && valorBadge) {
+            rangeInput.addEventListener('input', (e) => {
+                valorBadge.textContent = e.target.value;
+            });
+        }
+    </script>
+</body>
+</html>
